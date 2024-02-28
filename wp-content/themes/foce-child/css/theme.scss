@@ -8,4 +8,26 @@
  Version: 0.1
  */
 
-	
+ .story__article::after  {
+    animation: girar 10s linear infinite;
+    /*Laanimacióndura 10segundos,
+    es linealyserepiteinfinitamente*/
+        /* Define la animación para la imagen */ 
+    -webkit-animation: girar 10s linear infinite;
+}
+  @keyframes girar {
+    from {
+      transform: rotate(0deg); /* Comienza desde 0 grados */
+    }
+    to {
+      transform: rotate(360deg); /* Termina en 360 grados */
+    }
+  }
+  @keyframes subir-imagen {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
