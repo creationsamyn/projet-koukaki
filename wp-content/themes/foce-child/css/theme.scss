@@ -7,15 +7,11 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-
  .story__article::after  {
-    animation: girar 10s linear infinite;
-    /*Laanimacióndura 10segundos,
-    es linealyserepiteinfinitamente*/
-        /* Define la animación para la imagen */ 
-    -webkit-animation: girar 10s linear infinite;
+    animation: fleur 10s linear infinite;
+    -webkit-animation: fleur 10s linear infinite;
 }
-  @keyframes girar {
+  @keyframes fleur {
     from {
       transform: rotate(0deg); /* Comienza desde 0 grados */
     }
@@ -23,11 +19,22 @@
       transform: rotate(360deg); /* Termina en 360 grados */
     }
   }
-  @keyframes subir-imagen {
+ /*---animation logo ---*/
+ .banner {
+  position: relative;
+  opacity: 0;
+  /*Opacidadinicial*/animation: moveDownContainer 2s forwards;
+   /* Utiliza una animación diferente para el contenedor */
+  -webkit-animation: moveDownContainer 2s forwards;
+}
+
+ @keyframes moveDownContainer {
     from {
-      transform: translateY(100%);
+      top: -200px; /* Mueve el contenedor hacia arriba */
+      opacity: 0; /* Opacidad inicial */
     }
     to {
-      transform: translateY(0);
+      top: 0; /* Posición inicial */
+      opacity: 1; /* Opacidad final */
     }
   }
