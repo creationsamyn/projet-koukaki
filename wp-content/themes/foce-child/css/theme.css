@@ -41,19 +41,19 @@
     opacity: 1; /* Opacidad final */
   }
 }
-.banner img {
+/*animation logo */
+.banner img, .story, #studio {
   position: relative;
-  bottom: 30px;
   /*Posiciónfinal*/
-  animation: moveUp 2s;
-  -webkit-animation: moveUp 2s;
+  bottom: 0px;
+  animation: moveUp 3s;
+  -webkit-animation: moveUp 3s;
 }
-
 @keyframes moveUp {
   from {
-    bottom: -300px; /* Posición inicial más abajo */
+    bottom: -150px; /* Posición inicial más abajo */
   }
   to {
-    bottom: 30px; /* Posición final */
+    bottom: 0px; /* Posición final */
   }
 }/*# sourceMappingURL=theme.css.map */

@@ -38,19 +38,28 @@
       opacity: 1; /* Opacidad final */
     }
   }
-  .banner img {
-  position: relative;
-  bottom: 30px;
-  /*Posiciónfinal*/
-  animation: moveUp 2s;
-  -webkit-animation: moveUp 2s;
-}
-
-  @keyframes moveUp {
-    from {
-      bottom: -300px; /* Posición inicial más abajo */
-    }
-    to {
-      bottom: 30px; /* Posición final */
+/*animation logo */
+.banner img, .story, #studio  {
+    position: relative;
+    /*Posiciónfinal*/
+    bottom: 0px;
+    animation: moveUp 3s;
+    -webkit-animation: moveUp 3s;
+     @keyframes moveUp 
+{
+      from {
+        bottom: -150px; /* Posición inicial más abajo */
+      }
+      to {
+        bottom: 0px; /* Posición final */
+      }
     }
   }
+ 
+ 
+
+
+
+
+
+
