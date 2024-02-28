@@ -19,7 +19,7 @@
       transform: rotate(360deg); /* Termina en 360 grados */
     }
   }
- /*---animation logo ---*/
+ /*---animation banner ,  logo ---*/
  .banner {
   position: relative;
   opacity: 0;
@@ -36,5 +36,21 @@
     to {
       top: 0; /* Posición inicial */
       opacity: 1; /* Opacidad final */
+    }
+  }
+  .banner img {
+  position: relative;
+  bottom: 30px;
+  /*Posiciónfinal*/
+  animation: moveUp 2s;
+  -webkit-animation: moveUp 2s;
+}
+
+  @keyframes moveUp {
+    from {
+      bottom: -300px; /* Posición inicial más abajo */
+    }
+    to {
+      bottom: 30px; /* Posición final */
     }
   }
