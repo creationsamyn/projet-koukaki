@@ -8,19 +8,6 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-.story__article::after {
-  animation: fleur 10s linear infinite;
-  -webkit-animation: fleur 10s linear infinite;
-}
-
-@keyframes fleur {
-  from {
-    transform: rotate(0deg); /* Comienza desde 0 grados */
-  }
-  to {
-    transform: rotate(360deg); /* Termina en 360 grados */
-  }
-}
 /*---animation banner ,  logo ---*/
 .banner {
   position: relative;
@@ -41,19 +28,50 @@
     opacity: 1; /* Opacidad final */
   }
 }
-/*animation logo */
-.banner img, .story, #studio {
+.banner img {
   position: relative;
   /*Posiciónfinal*/
   bottom: 0px;
   animation: moveUp 3s;
   -webkit-animation: moveUp 3s;
 }
+
 @keyframes moveUp {
   from {
-    bottom: -150px; /* Posición inicial más abajo */
+    bottom: -300px; /* Posición inicial más abajo */
   }
   to {
     bottom: 0px; /* Posición final */
   }
-}/*# sourceMappingURL=theme.css.map */
+}
+/*------------------------------------------fin de animation--*/
+/*------------------animation l'histoire--*/
+.story__article::after {
+  animation: fleur 10s linear infinite;
+  -webkit-animation: fleur 10s linear infinite;
+}
+
+@keyframes fleur {
+  from {
+    transform: rotate(0deg); /* Comienza desde 0 grados */
+  }
+  to {
+    transform: rotate(360deg); /* Termina en 360 grados */
+  }
+}
+/*.story > *::before,
+.story > *::after {
+    opacity: 0;
+    animation: moveUp 3s forwards;
+    -webkit-animation: moveUp 3s forwards; 
+}
+@keyframes moveUp {
+  from {
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}*//*# sourceMappingURL=theme.css.map */
