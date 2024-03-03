@@ -44,34 +44,43 @@
     bottom: 0px; /* Posición final */
   }
 }
-/*------------------------------------------fin de animation--*/
+/*------------------------------------------fin de animation logo --*/
 /*------------------animation l'histoire--*/
-.story__article::after {
+.story__article::after,
+.elemento-con-animacion::after {
   animation: fleur 10s linear infinite;
   -webkit-animation: fleur 10s linear infinite;
 }
 
 @keyframes fleur {
   from {
-    transform: rotate(0deg); /* Comienza desde 0 grados */
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg); /* Termina en 360 grados */
+    transform: rotate(360deg);
   }
 }
-/*.story > *::before,
-.story > *::after {
-    opacity: 0;
-    animation: moveUp 3s forwards;
-    -webkit-animation: moveUp 3s forwards; 
+/* Definición de la animación fleur */
+.story *::before,
+.story h2::after,
+.story h2::after, .story {
+  opacity: 0;
+  animation: moveUp 3s forwards;
+  -webkit-animation: moveUp 3s forwards;
 }
+
+/* Definimos la animación moveUp */
 @keyframes moveUp {
   from {
-      transform: translateY(100px);
-      opacity: 0;
+    transform: translateY(100px);
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
-}*//*# sourceMappingURL=theme.css.map */
+}
+/* Evitar que los párrafos tengan animación */
+.story > p {
+  animation: none;
+}/*# sourceMappingURL=theme.css.map */
