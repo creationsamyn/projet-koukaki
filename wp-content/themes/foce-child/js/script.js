@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // Crear un elemento de video
         let videoElement = document.createElement("video");
         videoElement.setAttribute("width", "100%"); // Usar el ancho completo del contenedor
-        videoElement.setAttribute("autoplay", ""); // Video se reproduce automáticamente
-        videoElement.setAttribute("loop", ""); // Video se reproduce en bucle
+        videoElement.setAttribute("autoplay", "true"); // Video se reproduce automáticamente
+        videoElement.setAttribute("loop", "true"); // Video se reproduce en bucle
+        //videoElement.setAttribute("controls", "true"); // Agregar controles de reproducción
+
 
         // Crear un elemento de origen (source) 
-       let sourceElement = document.createElement("source");
+        let sourceElement = document.createElement("source");
         sourceElement.setAttribute("src", "https://assets.codepen.io/6093409/river.mp4");
         sourceElement.setAttribute("type", "video/mp4");
 
