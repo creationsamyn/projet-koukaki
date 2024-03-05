@@ -107,4 +107,47 @@
 /* Evitar que los párrafos tengan animación */
 .story > p {
   animation: none;
+}
+
+/*sniper------*/
+.story #characters {
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 0;
+  width: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: 440px !important;
+  overflow: hidden;
+}
+
+.swiper-slide figure {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-character h3 {
+  background-position: left;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.story #characters div {
+  flex: none;
+  flex-shrink: 0;
 }/*# sourceMappingURL=theme.css.map */

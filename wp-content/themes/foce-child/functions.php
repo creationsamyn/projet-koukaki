@@ -4,6 +4,9 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css');
     wp_enqueue_script( 'js-script', get_stylesheet_directory_uri() . '/js/script.js');
+    wp_enqueue_script( 'swiper', get_stylesheet_directory_uri() . '/js/swiper.js');
+    wp_enqueue_style('swiper-style',  'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
+    wp_enqueue_script('swiper-script',  'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js');
 }
 
 // Get customizer options form parent theme
