@@ -92,9 +92,22 @@
   }
 }
 /* Definición de la animación fleur */
+
+
+/* Evitar que los párrafos tengan animación */
+.story > p {
+  animation: none !important;
+  -webkit-animation: none !important;
+}
 .story  *::before,
+#studio *::before,
 .story h2::after, 
-.story h2::after, .story{
+.story h2::after, 
+#studio h2::after, 
+#studio h2::after,
+#studio h2,
+.story
+{
 
   opacity: 0;
   animation: moveUp 3s forwards;
@@ -112,10 +125,7 @@
     opacity: 1;
   }
 }
-/* Evitar que los párrafos tengan animación */
-.story > p {
-  animation: none;
-}
+
 
 /*sniper------*/
 .swiper-container {
@@ -140,27 +150,37 @@
 }
 .story #characters {
   margin-left: auto;
-  margin-right: 0;
+  background-size: cover;
   width: 100%;
+  margin-right: 0;
   display: flex;
-  justify-content: center; /* Centra los elementos horizontalmente */
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
 }
 
 .story #characters .other-characters {
+
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
 }
 
 .story #characters .other-characters figure {
-  margin: 0 10px; 
-  text-align: center; 
+  margin: 0;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  padding: 0;
 }
-
+figure img {
+  margin: 0 !important;
+}
 .story #characters .other-characters figure img {
-  width: 100%; 
+  width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .main-character h3 {
@@ -168,3 +188,6 @@
   text-align: left;
   padding-left: 50px;
 }
+
+
+/*------histoire-----*/
