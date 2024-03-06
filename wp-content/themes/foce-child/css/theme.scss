@@ -7,20 +7,25 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-/*-----banner video*/
 
-@media (max-width: 768px) {
-  .banner {
-    position: relative; /* Asegurar que el contenedor principal tenga una posición relativa */
-    width: 100%;
-    height: 500px;
+.story #characters div {
+flex: none;
+display: block;
+  .swiper-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Para recortar el video si es necesario */
   }
+} 
 
-  video {
+/*-----banner video*/
+.banner {
+  position: relative; /* Asegurar que el contenedor principal tenga una posición relativa */
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Para recortar el video si es necesario */
+  video{
     position: absolute;
     top: 0;
     left: 0;
@@ -29,9 +34,29 @@
     min-width: 100%; /* Para cubrir completamente el contenedor */
     min-height: 100%;
     z-index: -1; /* Colocar el video detrás del contenido */
-    object-fit: cover; /* Ajustar tamaño del video para cubrir el contenedor */
+    -o-object-fit: cover;
+       object-fit: cover; /* Ajustar tamaño del video para cubrir el contenedor */
   }
 }
+
+@media (min-width: 769px) {
+  .banner {
+    background: none ;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+      video {
+        display: none;
+       
+      }
+  }
+}
+
  
 
 
@@ -41,9 +66,8 @@
  .banner {
   position: relative;
   opacity: 0;
-  /*Opacidadinicial*/
-  animation: moveDownContainer 2s forwards;
-   /* Utiliza una animación diferente para el contenedor */
+  /*Opacidadinicial*/animation: moveDownContainer 2s forwards;
+  /*Utilizaunaanimacióndiferenteparaelcontenedor*/-webkit-animation: moveDownContainer 2s forwards;
   -webkit-animation: moveDownContainer 2s forwards;
 }
 
@@ -191,3 +215,4 @@ figure img {
 
 
 /*------histoire-----*/
+

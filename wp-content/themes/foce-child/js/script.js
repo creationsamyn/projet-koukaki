@@ -1,25 +1,16 @@
+
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Verificar si es un dispositivo móvil (ancho de pantalla <= 768px)
     if (window.innerWidth <= 768) {
         let banner = document.querySelector(".banner");
+        // Eliminar el video en dispositivos móviles
+        let videoElement = document.querySelector(".video");
+        videoElement.parentNode.removeChild(videoElement);
+                //let loadingImage = banner.querySelector(".loading-image");
 
-        // Crear un elemento de video
-        let videoElement = document.createElement("video");
-        videoElement.setAttribute("width", "100%"); // Usar el ancho completo del contenedor
-        videoElement.setAttribute("autoplay", "true"); // Video se reproduce automáticamente
-        videoElement.setAttribute("loop", "true"); // Video se reproduce en bucle
-        //videoElement.setAttribute("controls", "true"); // Agregar controles de reproducción
-
-
-        // Crear un elemento de origen (source) 
-        let sourceElement = document.createElement("source");
-        sourceElement.setAttribute("src", "https://assets.codepen.io/6093409/river.mp4");
-        sourceElement.setAttribute("type", "video/mp4");
-
-        // Agregar el elemento de origen al elemento de video
-        videoElement.appendChild(sourceElement);
-
-        // Agregar el elemento de video al contenedor
-        banner.appendChild(videoElement);
+        // Cargar la imagen de placeholder
+        let placeholderImage = document.createElement('img');
+        placeholderImage.src = '/projet-koukaki/wp-content/themes/foce-child/img/screenshot.png';
+        banner.appendChild(placeholderImage);
     }
 });

@@ -21,6 +21,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<?php get_template_part( 'video' ); ?>
 
 </body>
 </html>

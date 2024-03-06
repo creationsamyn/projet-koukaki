@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let swiper = new Swiper('.swiper-container', {
+    let swiper = new Swiper('swiper', {
         spaceBetween: 60,
         speed: 1000,
         autoplay: {
             delay: 2500,
-            disableOnInteraction: false,
+            //disableOnInteraction: false,
         },
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
         loop: true,
-        slidesPerView: 3,
+        slidesPerView: 1,
         coverflowEffect: {
             rotate: 60,
             stretch: 0,
