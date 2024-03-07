@@ -7,35 +7,30 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-
-.story #characters div {
-flex: none;
-display: block;
-  .swiper-wrapper {
-    display: flex;
-  }
-} 
-
+ 
 /*-----banner video*/
 .banner {
-  position: relative; /* Asegurar que el contenedor principal tenga una posición relativa */
+  position: relative;
   width: 100%;
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Para recortar el video si es necesario */
+  overflow: hidden;
+  /*------animation css ----*/
+  opacity: 0;
+  animation: moveDownContainer 2s forwards;
   video{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
-    min-width: 100%; /* Para cubrir completamente el contenedor */
+    min-width: 100%; 
     min-height: 100%;
-    z-index: -1; /* Colocar el video detrás del contenido */
+    z-index: -1;
     -o-object-fit: cover;
-       object-fit: cover; /* Ajustar tamaño del video para cubrir el contenedor */
+       object-fit: cover; 
   }
 }
 
@@ -56,20 +51,13 @@ display: block;
       }
   }
 }
+/*-----fin banner video*/
 
- 
 
 
 
 
  /*---animation banner ,  logo ---*/
- .banner {
-  position: relative;
-  opacity: 0;
-  /*Opacidadinicial*/animation: moveDownContainer 2s forwards;
-  /*Utilizaunaanimacióndiferenteparaelcontenedor*/-webkit-animation: moveDownContainer 2s forwards;
-  -webkit-animation: moveDownContainer 2s forwards;
-}
 
  @keyframes moveDownContainer {
     from {
@@ -100,45 +88,32 @@ display: block;
  /*------------------------------------------fin de animation logo --*/
 
  /*------------------animation l'histoire--*/
-.story__article::after,
+ .story__article::after,
 .elemento-con-animacion::after {
   animation: fleur 10s linear infinite;
   -webkit-animation: fleur 10s linear infinite;
-}
-
-
-@keyframes fleur {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  @keyframes fleur {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
-/* Definición de la animación fleur */
 
 
-/* Evitar que los párrafos tengan animación */
-.story > p {
-  animation: none !important;
-  -webkit-animation: none !important;
-}
-.story  *::before,
-#studio *::before,
 .story h2::after, 
-.story h2::after, 
-#studio h2::after, 
-#studio h2::after,
-#studio h2,
-.story
-{
-
+.story h2::before,
+.story__article::before, .story,
+.story #characters,
+#studio h2::before,.story #place, 
+#studio > div::before,#studio h2::after,.studio-A span, 
+.site-footer{
   opacity: 0;
   animation: moveUp 3s forwards;
   -webkit-animation: moveUp 3s forwards; 
-}
-
-/* Definimos la animación moveUp */
+  /* Definimos la animación moveUp */
 @keyframes moveUp {
   from {
     transform: translateY(100px);
@@ -149,70 +124,52 @@ display: block;
     opacity: 1;
   }
 }
-
-
-/*sniper------*/
-.swiper-container {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
 }
 
-.swiper-slide {
-  width: 440px !important;
-  overflow: hidden;
-}
-.swiper-slide figure {
-  margin: 0;
-  overflow: hidden;
-  position: relative;
-}
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
+
+/*-----------sniper----------*/
+
 .story #characters {
+  display: block;
   margin-left: auto;
   background-size: cover;
-  width: 100%;
   margin-right: 0;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: auto;
-}
+  h3 {
+    display: block;
+    background-position: left !important;
+    text-align: left;
+    padding-left: 50px;
+  }
+  div {
+    flex: none;
+    .swiper-slide {
+      flex-shrink: 0;
+  width: 30% !important;
+  overflow: hidden;
+  figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  
+    }
+    .swiper-container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+  }
+  }
 
-.story #characters .other-characters {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.story #characters .other-characters figure {
-  margin: 0;
-  text-align: center;
-  width: 200px;
-  height: 200px;
-  padding: 0;
-}
-figure img {
-  margin: 0 !important;
-}
-.story #characters .other-characters figure img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.main-character h3 {
-  background-position: left;
-  text-align: left;
-  padding-left: 50px;
-}
 
 
-/*------histoire-----*/
+
+/*------DEBUT L'histoire-----*/
+
 

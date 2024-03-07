@@ -10,9 +10,8 @@
             ?>
 
             <article id="characters">
-                <div class="main-character">
                     <h3>Les personnages</h3>
-                </div>
+            
                 <div class=" swiper">
                     <div class="swiper-wrapper">
                     <?php

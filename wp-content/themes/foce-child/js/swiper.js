@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let swiper = new Swiper('swiper', {
+    let swiper = new Swiper('.swiper', {
         spaceBetween: 60,
         speed: 1000,
         autoplay: {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         grabCursor: true,
         centeredSlides: true,
         loop: true,
-        slidesPerView: 1,
+        slidesPerView: 3,
         coverflowEffect: {
             rotate: 60,
             stretch: 0,
