@@ -1,16 +1,10 @@
 
-
+// ---------- Burger Menu ----------
 document.addEventListener("DOMContentLoaded", function() {
-    if (window.innerWidth <= 768) {
-        let banner = document.querySelector(".banner");
-        // Eliminar el video en dispositivos móviles
-        let videoElement = document.querySelector(".video");
-        videoElement.parentNode.removeChild(videoElement);
-                //let loadingImage = banner.querySelector(".loading-image");
+  const burgerButton = document.querySelector('.burger-close-modal');
+  const burgerMenu = document.querySelector('.burger-menu');
 
-        // Cargar la imagen de placeholder
-        let placeholderImage = document.createElement('img');
-        placeholderImage.src = '/projet-koukaki/wp-content/themes/foce-child/img/screenshot.png';
-        banner.appendChild(placeholderImage);
-    }
+  burgerButton.addEventListener('click', function() {
+      burgerMenu.classList.toggle('active');
+  });
 });

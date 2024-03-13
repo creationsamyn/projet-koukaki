@@ -8,6 +8,148 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+/*.burger-menu */
+/* Estilo para el efecto hover en los enlaces del menú */
+.burger-menu li > a:hover {
+  filter: drop-shadow(0px 0px 5px #ff5c00);
+  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
+  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
+}
+
+/* Estilo para mostrar el menú principal en dispositivos pequeños */
+.main-navigation.toggled ul {
+  display: flex !important;
+}
+
+/* Estilo para el contenedor del menú de navegación */
+#site-navigation {
+  position: relative;
+}
+
+/* Estilo para el contenedor del botón de hamburguesa */
+.burger {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.4rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Estilo para los títulos y enlaces del menú */
+.burger h2,
+.burger li > a {
+  font-size: 3.1rem;
+}
+
+/* Estilo para el menú de hamburguesa */
+.burger .burger-menu {
+  position: relative;
+  width: 100%;
+  height: 91vh;
+  background: #FFF5E9;
+  font-size: 3em;
+  display: none;
+}
+
+/* Estilo para la lista dentro del menú de hamburguesa */
+.burger-menu ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  gap: 1em;
+}
+
+/* Estilo para el pie del menú de hamburguesa */
+.burger-menu-footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+}
+
+/* Estilo para el botón de cerrar el menú */
+.burger-close-modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 8px;
+  width: 40px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 3em;
+  cursor: pointer;
+}
+
+/* Estilo para las líneas del botón de cerrar el menú */
+.burger-close-modal .line {
+  height: 2px;
+  background-color: #000;
+  display: block;
+  width: 100%;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para el botón de cerrar el menú cuando está activo */
+.burger-close-modal.close .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-close-modal.close .line:first-child {
+  transform: rotate(45deg) translate3d(8px, 6px, 0);
+}
+
+.burger-close-modal.close span.line:last-child {
+  transform: rotate(-45deg) translate3d(8px, -6px, 0);
+}
+
+/* Estilo para las líneas del menú de hamburguesa */
+.burger-menu .line {
+  height: 2px;
+  background-color: #000;
+  display: block;
+  width: 100%;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media queries para dispositivos de diferentes tamaños */
+@media screen and (min-width: 620px) and (max-width: 900px) {
+  #menu {
+    padding-top: 50px;
+    height: 164vh;
+  }
+  #menu img {
+    display: none;
+  }
+}
+@media screen and (max-width: 620px) {
+  #menu {
+    padding-top: 50px;
+    height: 164vh;
+  }
+  #menu img {
+    display: none;
+  }
+  #menu li {
+    font-size: 32px;
+    line-height: normal;
+  }
+  #menu .menu-burger-footer {
+    bottom: 585px;
+    left: 39%;
+  }
+}
+/*fin de menu -----*/
 /*-----banner video*/
 .banner {
   position: relative;
@@ -156,4 +298,61 @@
   overflow: hidden;
 }
 
-/*------DEBUT L'histoire-----*//*# sourceMappingURL=theme.css.map */
+/*------DEBUT L'histoire-----*/
+.animated-text {
+  display: inline-block;
+  position: relative;
+  animation: slideFromBottom 2s forwards;
+  -webkit-animation: slideFromBottom 2s forwards;
+}
+
+.animated-text-2 {
+  position: relative;
+  bottom: -100px;
+  animation: slideFromBottom 4s forwards;
+  -webkit-animation: slideFromBottom 4s forwards;
+}
+
+@keyframes slideFromBottom {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+/*-----lieu------------*/
+.section-oscars {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.section-oscars h3 {
+  background-image: url("../assets/images/backgroundh3.png");
+  background-size: 100%;
+  text-align: left;
+  padding: 100px 84px;
+}
+.section-oscars img {
+  margin-top: 100px;
+  height: 129px;
+}
+
+@media screen and (max-width: 870px) {
+  .section-oscars {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-oscars img {
+    width: 278px;
+    margin-top: 0px;
+  }
+  .section-oscars h3 {
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 870px) and (max-width: 1000px) {
+  .section-oscars h3 {
+    font-size: 2em;
+  }
+}/*# sourceMappingURL=theme.css.map */
