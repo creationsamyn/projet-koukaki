@@ -106,7 +106,7 @@
 .burger-menu-story::before {
   content: url("../assets/images/catBlue.png");
   position: absolute;
-  right: 80em;
+  right: 70em;
   bottom: -3em;
   margin-top: 3rem;
   animation: float 7s 100ms infinite ease-in-out;
@@ -388,40 +388,40 @@
 
 
  /*---animation banner ,  logo ---*/
-
- @keyframes moveDownContainer {
-    from {
-      top: -200px; /* Mueve el contenedor hacia arriba */
-      opacity: 0; /* Opacidad inicial */
-    }
-    to {
-      top: 0; /* Posición inicial */
-      opacity: 1; /* Opacidad final */
-    }
+ .banner img {
+  position: relative;
+  display: block;
+  /*Posiciónfinal*/bottom: 0px;
+  animation: moveUp 3s, float 6s 200ms infinite ease-in-out;
+  -webkit-animation: moveUp 3s, float 6s 200ms infinite ease-in-out;
+}
+@keyframes moveUp {
+  from {
+    bottom: -300px; /* Posición inicial más abajo */
   }
-
-.banner img {
-    position: relative;
-    /*Posiciónfinal*/
-    bottom: 0px;
-    animation: moveUp 3s;
-    -webkit-animation: moveUp 3s; 
+  to {
+    bottom: 0px; /* Posición final */
   }
-  @keyframes moveUp {
-    from {
-      bottom: -300px; /* Posición inicial más abajo */
-    }
-    to {
-      bottom: 0px; /* Posición final */
-    }
+}
+@keyframes moveDownContainer {
+  from {
+    top: -200px; /* Mueve el contenedor hacia arriba */
+    opacity: 0; /* Opacidad inicial */
   }
+  to {
+    top: 0; /* Posición inicial */
+    opacity: 1; /* Opacidad final */
+  }
+}
  /*------------------------------------------fin de animation logo --*/
 
- /*------------------animation l'histoire--*/
+ /*------------------animation l'histoire fleur --*/
  .story__article::after,
 .elemento-con-animacion::after,  
-.site-footer::before,.site-footer::after,
-.site-footer ul::after {
+.site-footer ul::after, 
+.story h2::after,.section-oscars::before,
+.section-oscars::after,
+#studio h2::before, #studio h2::after  {
   animation: fleur 10s linear infinite;
   -webkit-animation: fleur 10s linear infinite;
   @keyframes fleur {
@@ -435,13 +435,11 @@
 }
 
 
-.story h2::after, 
-.story h2::before,
+
 .story__article::before, .story,
 .story #characters,
-#studio h2::before,.story #place, 
-#studio > div::before,#studio h2::after,.studio-A span, 
-.site-footer{
+.studio-A span,#studio, 
+.site-footer, .section-oscars{
   opacity: 0;
   animation: moveUp 3s forwards;
   -webkit-animation: moveUp 3s forwards; 
@@ -591,7 +589,6 @@
 .section-oscars {
   display: flex;
   justify-content: center;
-  align-items: center; 
   margin-top: 50px;
 
   margin: 0 auto; /* Ajusta el margen para centrar horizontalmente */
@@ -622,6 +619,24 @@
   .section-oscars h3 {
     font-size: 2em;
   }
+}
+.section-oscars::before {
+  content: url(../assets/images/Sunflower.png);
+  position: absolute;
+  left: 10em;
+  top: -3em;
+}
+
+.section-oscars::after {
+  content: url(../assets/images/orchid.png);
+  position: absolute;
+  right: -5em;
+  bottom: 22em;
+  overflow: hidden;
+}
+
+.site-footer::before,.site-footer::after{
+  display: none;
 }
 
 @media screen and (min-width: 870px) and (max-width: 1000px) {
