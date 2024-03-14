@@ -36,16 +36,16 @@
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
+                <span class="closeCross"></span>
             </button>
             <div class="burger-menu">
             <img class="burger-menu-logo" src="<?php echo get_template_directory_uri() . '-child/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
             <ul>
                 <li class="burger-menu-story flower cat"><a href="#story">Histoire</a></li>
-                        <li class="burger-menu-character flower cat"><a href="#characters">Personnages</a></li>
-                        <li class="burger-menu-place flower cat"><a href="#place">Lieu</a></li>
-                        <li class="burger-menu-studio flower cat"><a href="#studio">Studio Koukaki</a>
-                        </li>
-                </ul>
+                <li class="burger-menu-character flower cat"><a href="#characters">Personnages</a></li>
+                <li class="burger-menu-place flower cat "><a styles="color:red;" class="active-cat" href="#place">Lieu</a></li>
+                <li class="burger-menu-studio flower cat"><a href="#studio">Studio Koukaki</a></li>
+            </ul>
                 <div class="burger-menu-footer burger-open-click flower cat">
                 <a href="#">STUDIO KOUKAKI</a></li>                
             </div>

@@ -9,23 +9,166 @@
  Version: 0.1
  */
 /*.burger-menu */
-/* Estilo para el efecto hover en los enlaces del menú */
-.burger-menu li > a:hover {
+/* Estilo para el contenedor del menú de navegación */
+#site-navigation {
+  position: relative;
+  /* Estilo para mostrar el menú principal en dispositivos pequeños */
+}
+#site-navigation.main-navigation.toggled ul.nav-menu {
+  display: flex;
+}
+
+/* Estilo para el menú de hamburguesa */
+.burger .line.open {
+  display: none;
+}
+.burger .closeCross {
+  display: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 3rem;
+}
+.burger .closeCross.open {
+  display: block;
+}
+.burger .burger-menu {
+  position: relative;
+  width: 100%;
+  height: 91vh;
+  background: #FFF5E9;
+  font-size: 3em;
+  display: none;
+}
+.burger .burger-menu.active {
+  display: block;
+}
+.burger .burger-menu li > a {
+  color: #000000; /* Cambiar el color del texto del enlace */
+  font-weight: bold; /* Hacer el texto en negrita */
+  margin-top: 4rem;
+}
+.burger .burger-menu li > a:hover {
   filter: drop-shadow(0px 0px 5px #ff5c00);
   -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
   -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
 }
-
-/* Estilo para mostrar el menú principal en dispositivos pequeños */
-.main-navigation.toggled ul {
-  display: flex !important;
+.burger .burger-menu .active-cat {
+  filter: drop-shadow(0px 0px 5px #ff5c00);
+  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
+  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
+}
+.burger .burger-menu-logo {
+  width: 154px;
+  height: 95px;
+  margin-top: 18px;
 }
 
-/* Estilo para el contenedor del menú de navegación */
-#site-navigation {
+/*images nav----------------------*/
+.story #characters div {
+  flex: none;
+  flex-shrink: 0;
+}
+
+.burger-menu::after {
+  content: url("../assets/images/orchid.png");
+  position: absolute;
+  left: -4em;
+  top: 3em;
+  transform: scale(0.9);
+  animation: fleur 10s linear infinite;
+  -webkit-animation: fleur 10s linear infinite;
+}
+
+.burger-menu-story::after {
+  content: url("../assets/images/Sunflower.png");
+  position: absolute;
+  right: 19rem;
+  bottom: 0em;
+  animation: fleur 10s linear infinite;
+  -webkit-animation: fleur 10s linear infinite;
+}
+
+.burger-menu-story::before {
+  content: url("../assets/images/catBlue.png");
+  position: absolute;
+  right: 80em;
+  bottom: -3em;
+  margin-top: 3rem;
+  animation: float 7s 100ms infinite ease-in-out;
+}
+
+.burger-menu-place::after {
+  content: url("../assets/images/flower.png");
+  position: absolute;
+  right: 80em;
+  top: -1em;
+  transform: scale(0.5);
+  animation: fleur 10s linear infinite;
+  -webkit-animation: fleur 10s linear infinite;
+}
+
+.burger-menu-character::after {
+  content: url("../assets/images/random_flower.png");
+  position: absolute;
+  left: 95em;
+  top: -2em;
+  transform: scale(0.3);
+  animation: fleur 10s linear infinite;
+  -webkit-animation: fleur 10s linear infinite;
+}
+
+.burger-menu-footer::after {
+  content: url("../assets/images/hibiscus_footer.png");
+  position: absolute;
+  left: 500px;
+  bottom: -23.5em;
+  animation: fleur 10s linear infinite;
+  -webkit-animation: fleur 10s linear infinite;
+}
+
+.burger-menu-footer::before {
+  content: url("../assets/images/catYellow.png");
+  position: absolute;
+  right: 30em;
+  bottom: 0;
+  animation: float 5s 300ms infinite ease-in-out;
+}
+
+.burger-menu-place::before {
+  content: url("../assets/images/catGrey.png");
+  position: absolute;
+  left: -20em;
+  top: -4em;
+  right: -80rem;
+  animation: float 6s 200ms infinite ease-in-out;
+}
+
+/*images nav----------------------*/
+/*-----------closecross------*/
+.closeCross {
   position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 100%;
+  font-weight: 300;
+  font-size: 3rem;
+}
+.closeCross::before, .closeCross::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.closeCross::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+.closeCross::after {
+  transform: translateY(-50%) rotate(-45deg);
 }
 
+/*-----------fin closecross------*/
 /* Estilo para el contenedor del botón de hamburguesa */
 .burger {
   font-family: "Roboto Mono", monospace;
@@ -37,20 +180,19 @@
   overflow: hidden;
 }
 
-/* Estilo para los títulos y enlaces del menú */
 .burger h2,
 .burger li > a {
   font-size: 3.1rem;
 }
-
-/* Estilo para el menú de hamburguesa */
-.burger .burger-menu {
+.burger h2 .burger-menu ul,
+.burger li > a .burger-menu ul {
   position: relative;
-  width: 100%;
-  height: 91vh;
-  background: #FFF5E9;
-  font-size: 3em;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  gap: 1em;
 }
 
 /* Estilo para la lista dentro del menú de hamburguesa */
@@ -70,6 +212,10 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 40px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 /* Estilo para el botón de cerrar el menú */
@@ -97,29 +243,40 @@
   width: 100%;
   margin: 0;
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
-
-/* Estilo para el botón de cerrar el menú cuando está activo */
-.burger-close-modal.close .line:nth-child(2) {
+.burger-close-modal .line .burger-close-modal.close .line:nth-child(2) {
   opacity: 0;
 }
 
 .burger-close-modal.close .line:first-child {
   transform: rotate(45deg) translate3d(8px, 6px, 0);
+  -webkit-transform: rotate(45deg) translate3d(8px, 6px, 0);
+  -moz-transform: rotate(45deg) translate3d(8px, 6px, 0);
+  -ms-transform: rotate(45deg) translate3d(8px, 6px, 0);
+  -o-transform: rotate(45deg) translate3d(8px, 6px, 0);
 }
-
-.burger-close-modal.close span.line:last-child {
+.burger-close-modal.close .line:first-child .burger-close-modal.close span.line:last-child {
   transform: rotate(-45deg) translate3d(8px, -6px, 0);
+  -webkit-transform: rotate(-45deg) translate3d(8px, -6px, 0);
+  -moz-transform: rotate(-45deg) translate3d(8px, -6px, 0);
+  -ms-transform: rotate(-45deg) translate3d(8px, -6px, 0);
+  -o-transform: rotate(-45deg) translate3d(8px, -6px, 0);
 }
-
-/* Estilo para las líneas del menú de hamburguesa */
-.burger-menu .line {
+.burger-close-modal.close .line:first-child .burger-menu .line {
   height: 2px;
   background-color: #000;
   display: block;
   width: 100%;
   margin: 0;
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 /* Media queries para dispositivos de diferentes tamaños */
@@ -223,7 +380,9 @@
 /*------------------------------------------fin de animation logo --*/
 /*------------------animation l'histoire--*/
 .story__article::after,
-.elemento-con-animacion::after {
+.elemento-con-animacion::after,
+.site-footer::before, .site-footer::after,
+.site-footer ul::after {
   animation: fleur 10s linear infinite;
   -webkit-animation: fleur 10s linear infinite;
 }
@@ -322,10 +481,68 @@
   }
 }
 /*-----lieu------------*/
+.story #place {
+  display: flex;
+  width: 100%;
+  min-height: 699px;
+  position: relative;
+}
+.story #place::before, .story #place::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 400px;
+  opacity: 0.5;
+  z-index: 1;
+  animation: moveCloud 10s linear infinite;
+  overflow: hidden;
+}
+.story #place::before {
+  margin-top: 5rem;
+  width: 800px; /* Ancho de la imagen */
+  height: 143px;
+  background-image: url("../assets/images/little_cloud.png");
+  right: 50%;
+  top: 30%;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+.story #place::after {
+  width: 600px;
+  height: 143px;
+  background-image: url("../assets/images/big_cloud.png");
+  /*imageshaut--*/
+  top: 12%;
+  right: 38%;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+@keyframes moveCloud {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(calc(-100% - 600px + 90%));
+    /*Ajustaelvalorsegúnelanchodelcontenedorylaimagenmásgrande*/
+    -webkit-transform: translateX(calc(-100% - 600px + 90%));
+    -moz-transform: translateX(calc(-100% - 600px + 90%));
+    -ms-transform: translateX(calc(-100% - 600px + 90%));
+    -o-transform: translateX(calc(-100% - 600px + 90%));
+    -webkit-transform: translateX(calc(-100% - 600px + 90%));
+  }
+  100% {
+    transform: translateX(0%); /* Vuelve a la posición inicial */
+  }
+}
+/*----.section-oscars------*/
 .section-oscars {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 50px;
+  margin: 0 auto; /* Ajusta el margen para centrar horizontalmente */
 }
 .section-oscars h3 {
   background-image: url("../assets/images/backgroundh3.png");
@@ -354,5 +571,36 @@
 @media screen and (min-width: 870px) and (max-width: 1000px) {
   .section-oscars h3 {
     font-size: 2em;
+  }
+}
+/*----fin section-oscars------*/
+/* Pour faire flotter les éléments */
+@keyframes float {
+  0% {
+    transform: translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: translate3d(6px, 6px, 0);
   }
 }/*# sourceMappingURL=theme.css.map */
